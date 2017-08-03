@@ -6,8 +6,11 @@ Author : Daniel Jordão Santana (daniel.js@gmail.com)
 Poweered by Symfony 2.8
 
 Deliverables > 
+
 a. Image DomainDiag.png
+
 b. eer_model
+
 c. API Mapping :
 
 GET /group # Get group list
