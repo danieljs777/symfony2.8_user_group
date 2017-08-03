@@ -3,13 +3,13 @@ Simple User & Group Admin / API
 
 Author : Daniel Jordão Santana (daniel.js@gmail.com)
 
-Poweered by Symfony 2.8
+Powered by Symfony 2.8
 
 Deliverables > 
 
 a. Image DomainDiag.png
 
-b. eer_model
+b. eer_model.png
 
 c. API Mapping :
 
