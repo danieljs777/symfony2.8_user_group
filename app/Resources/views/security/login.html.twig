@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+
+            <form action="{{ path('login') }}" method="post" class="form-horizontal" style="margin-bottom: 0px !important;">
+
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+
+                            <h4 class="text-center" style="margin-bottom: 25px;">Enter your credentials</h4>
+
+                            {% if error %}
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+
+
+                                        <div class="alert alert-dismissable alert-danger">
+                                            <strong>Error!</strong> {{ error.messageKey|trans(error.messageData, 'security') }}
+                                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                        </div>	
+
+
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Username</span>
+                                        <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Password</span>
+                                        <input class="form-control" type="password" id="password" name="_password" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="panel-footer">
+                            <div class="text-right">
+                                <input type="submit" class="btn btn-primary" value="Login" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{ form_start(edit_form) }}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        User edit
+                    </div>
+
+                    <div class="panel-body">    
+
+
+                        {{ form_widget(edit_form) }}
+
+
+                    </div>
+                    <div class="panel-footer">
+                        <a href="{{ path('user_index') }}"><button class="btn btn-default" type="button">Go to list</button></a>
+                        <input type="submit" class="btn btn-primary" value="Save" />
+                    </div>                                   
+                </div>
+                {{ form_end(edit_form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

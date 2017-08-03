@@ -1,0 +1,19 @@
+app_user:
+    resource: "@AppBundle/Controller/UserController.php"
+    type:     annotation
+
+app_user_group:
+    resource: "@AppBundle/Controller/UserGroupController.php"
+    type:     annotation
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+logout:
+    path: /logout
+    
+api:    
+    type: rest
+    resource: "@AppBundle/Resources/config/api_routes.yml"    
+    

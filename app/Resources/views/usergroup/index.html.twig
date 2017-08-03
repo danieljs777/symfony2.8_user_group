@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">User Groups</div>
+
+                    <div class="panel-body">
+
+                        <table class="table table-striped table-bordered table-responsive table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for userGroup in userGroups %}
+                                    <tr>
+                                        <td><a href="{{ path('group_show', { 'id': userGroup.id }) }}">{{ userGroup.id }}</a></td>
+                                        <td>{{ userGroup.name }}</td>
+                                        <td>
+                                            <a href="{{ path('group_show', { 'id': userGroup.id }) }}">Show</a> |
+                                            <a href="{{ path('group_edit', { 'id': userGroup.id }) }}">Edit</a>
+                                            
+                                       </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <a href="{{ path('group_new') }}"><button class="btn btn-primary">Create</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

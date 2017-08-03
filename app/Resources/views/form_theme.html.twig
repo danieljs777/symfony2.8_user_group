@@ -1,0 +1,15 @@
+{% block form_row %}
+    <div class="form-group">
+        <label class="col-sm-3 control-label">{{ form_label(form) }}</label>
+        <div class="col-sm-6">{{ form_widget(form) }}</div>
+        <div class="col-sm-3">{{ form_errors(form) }}</div>
+    </div>
+{% endblock form_row %}
+
+{% block form_widget_simple %}
+    {% spaceless %}
+        {% set attr = attr|merge({ 'class': (attr.class|default('') ~ ' form-control')|trim }) %}
+        {% set type = type|default('text') %}
+        <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+    {% endspaceless %}
+{% endblock form_widget_simple %}

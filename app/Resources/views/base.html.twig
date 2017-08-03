@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Daniel - Internations!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    {% if app.session.flashBag.has('error') %}
+        <div class="alert alert-danger" role="alert">
+            {% for msg in app.session.flashBag.get('error') %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav">
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <li><a href="#">Logged in: {{ app.user.username }}</a></li>
+                        <li  ><a href="{{ app.request.getBaseURL() }}/user">Users</a></li>
+                        <li  ><a href="{{ app.request.getBaseURL() }}/group">Groups</a></li>
+                        <li  ><a href="{{ app.request.getBaseURL() }}/logout">Logoff</a></li>
+                    {% endif %}
+                </ul>
+            </div>      
+        </div>
+
+    </nav>
+
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
+</html>
